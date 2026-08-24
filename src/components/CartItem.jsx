@@ -10,7 +10,7 @@ export default function CartItem({ item }) {
       <div className="cart-item-info">
         <h3>{item.name}</h3>
         <p>Size: {item.size}</p>
-        <strong>${item.price.toFixed(2)}</strong>
+        <strong>Rs.{item.price.toFixed(2)}</strong>
       </div>
 
       <div className="quantity-control">
@@ -32,7 +32,7 @@ export default function CartItem({ item }) {
       </div>
 
       <strong className="cart-line-total">
-        ${(item.price * item.quantity).toFixed(2)}
+        Rs.{(item.price * item.quantity).toFixed(2)}
       </strong>
 
       <button

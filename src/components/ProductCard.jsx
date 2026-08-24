@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
         </div>
 
         <div className="product-card-footer">
-          <strong>${product.price.toFixed(2)}</strong>
+          <strong>Rs.{product.price.toFixed(2)}</strong>
           <button
             className="small-button"
             onClick={() => addToCart(product)}
