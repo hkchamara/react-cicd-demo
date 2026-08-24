@@ -1,12 +1,6 @@
 import { useState } from "react";
 
-import { describe, it, expect } from "vitest";
 
-describe("CI/CD application", () => {
-  it("should pass the CI test", () => {
-    expect(true).toBe(true);
-  });
-});
 
 function App() {
   const [task, setTask] = useState("");
@@ -45,7 +39,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>CI/CD Task Manager</h1>
+      <h1>My DevOps Task Manager</h1>
 
       <div className="input-area">
         <input
