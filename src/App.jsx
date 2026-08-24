@@ -1,79 +1,29 @@
-import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
 
-
-
-function App() {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = () => {
-    if (task.trim() === "") {
-      return;
-    }
-
-    setTasks([
-      ...tasks,
-      {
-        id: Date.now(),
-        name: task,
-        completed: false,
-      },
-    ]);
-
-    setTask("");
-  };
-
-  const toggleTask = (id) => {
-    setTasks(
-      tasks.map((item) =>
-        item.id === id
-          ? { ...item, completed: !item.completed }
-          : item
-      )
-    );
-  };
-
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((item) => item.id !== id));
-  };
-
+export default function App() {
   return (
-    <div className="container">
-      <h1>Jenkins CI/CD is Working!</h1>
-
-      <div className="input-area">
-        <input
-          type="text"
-          placeholder="Enter a task"
-          value={task}
-          onChange={(event) => setTask(event.target.value)}
-        />
-
-        <button onClick={addTask}>Add Task</button>
-      </div>
-
-      <div className="task-list">
-        {tasks.length === 0 ? (
-          <p>No tasks available.</p>
-        ) : (
-          tasks.map((item) => (
-            <div className="task" key={item.id}>
-              <span
-                className={item.completed ? "completed" : ""}
-                onClick={() => toggleTask(item.id)}
-              >
-                {item.name}
-              </span>
-
-              <button onClick={() => deleteTask(item.id)}>
-                Delete
-              </button>
-            </div>
-          ))
-        )}
-      </div>
+    <div className="app-shell">
+      <Header />
+      <main className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default App;
