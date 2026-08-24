@@ -64,7 +64,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <span className="eyebrow">CUSTOMER FAVORITES</span>
-            <h2>Featured Shoes</h2>
+            <h2>Featured Shoes </h2>
           </div>
           <Link to="/products">Shop all →</Link>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
         <div className="container promo-content">
           <div>
             <span className="eyebrow">SIMPLE. FAST. COMFORTABLE.</span>
-            <h2>Free shipping on orders over $150.</h2>
+            <h2>Free shipping on orders over Rs.15000.00</h2>
             <p>Build your perfect collection and save on delivery.</p>
           </div>
           <Link className="primary-button light-button" to="/products">
