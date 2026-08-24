@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>My DevOps Task Manager</h1>
+      <h1>My DevOps Task </h1>
 
       <div className="input-area">
         <input
