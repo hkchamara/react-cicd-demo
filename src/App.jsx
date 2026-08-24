@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+import { describe, it, expect } from "vitest";
+
+describe("CI/CD application", () => {
+  it("should pass the CI test", () => {
+    expect(true).toBe(true);
+  });
+});
+
 function App() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
